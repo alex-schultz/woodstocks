@@ -1,0 +1,325 @@
+<div class="panel panel-default">
+  <div class="panel-heading" style="">
+    <a href="javascript:history.back()">
+      <i style="display: inline; position: absolute; top: 10px;" class="material-icons">arrow_back</i>
+    </a>
+    <div style="display: inline; margin-left: 36px;">
+      <span>{{user.displayName}}</span>
+      <span style="float: right;">({{user.description}})</span>
+    </div>
+  </div>
+  <div class="panel-body">
+    <!-- LEFT COLUMN -->
+    <div class="col-md-6">
+
+      <!-- CUSTOMER DETAILS -->
+      <div id="customer-details" class="col-md-12 expanded-group">
+        <h4>Customer Details</h4>
+        <div class="well col-md-12 details-panel">
+          <img *ngIf="user.thumbnailPhoto" class="img-absolute" [src]="'data:image/jpg;base64,'+user.thumbnailPhoto" />
+          <div class="row" *ngIf="user.displayName">
+            <div class="col-md-4">
+              <p><strong>Display Name:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.displayName}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.department">
+            <div class="col-md-4">
+              <p><strong>Department</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.department}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.physicalDeliveryOfficeName">
+            <div class="col-md-4">
+              <p><strong>Office:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.physicalDeliveryOfficeName}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.description">
+            <div class="col-md-4">
+              <p><strong>Description:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.description}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.title">
+            <div class="col-md-4">
+              <p><strong>Job Title:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.title}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.primaryaffiliation">
+            <div class="col-md-4">
+              <p><strong>Affiliations:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p><strong>{{user.contool.primaryaffiliation}}</strong>, {{user.contool.currentaffiliations | affiliationClean}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div id="contact-info" class="col-md-12 expanded-group">
+        <h4>Contact Info</h4>
+        <div class="well col-md-12 details-panel">
+          <div class="row" *ngIf="user.exchange">
+            <div class="col-md-4">
+              <p><strong>Email (Excahange):</strong></p>
+            </div>
+            <div class="col-md-8 clickable" (click)="showAlias = !showAlias">
+              <p><b *ngIf="!showAlias">+</b><b *ngIf="showAlias">-</b> {{user.exchange}}</p>
+            </div>
+            <div *ngIf="showAlias" class="col-md-12">
+              <ul>
+                <li *ngFor="let alias of user.proxyAddresses" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{alias}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.exchangeOnline">
+            <div class="col-md-4">
+              <p><strong>Exchange Online:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.exchangeOnline}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.gmailenabled == 'Yes'">
+            <div class="col-md-4">
+              <p><strong>ONID Email (Google):</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p *ngIf="user.exchange || user.exchangeOnline">{{user.contool.username}}@onid.oregonstate.edu</p>
+              <p *ngIf="!(user.exchange || user.exchangeOnline)">{{user.mail}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.gmailenabled == 'No'">
+            <div class="col-md-4">
+              <p><strong>ONID Email (Cyrus):</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p *ngIf="user.exchange || user.exchangeOnline">{{user.contool.username}}@onid.oregonstate.edu</p>
+              <p *ngIf="!(user.exchange || user.exchangeOnline)">{{user.mail}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.gmailenabled =='No'">
+            <div class="col-md-4">
+              <p><strong>Forwarding: </strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.contool.mailforwarding}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.gmailenabled == 'No'">
+            <div class="col-md-4">
+              <p><strong>Keep-A-Copy:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.contool.keepcopy}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.telephoneNumber">
+            <div class="col-md-4">
+              <p><strong>Phone Number:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.telephoneNumber}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.altcontactemail">
+            <div class="col-md-4">
+              <p><strong>Alt Email:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.contool.altcontactemail}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.altcontactcell">
+            <div class="col-md-4">
+              <p><strong>Alt Phone Number:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.contool.altcontactcell}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-md-6">
+
+      <!-- ACCOUNT DETAILS -->
+      <div id="account-details" class="col-md-12 expanded-group">
+        <h4>Account Details</h4>
+        <div class="well col-md-12 details-panel">
+          <div class="row" *ngIf="user.sAMAccountName">
+            <div class="col-md-4">
+              <p><strong>Username:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.sAMAccountName}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.userPrincipalName">
+            <div class="col-md-4">
+              <p><strong>UPN:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.userPrincipalName}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.description">
+            <div class="col-md-4">
+              <p><strong>Description:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.description}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.canonicalName">
+            <div class="col-md-4">
+              <p><strong>Account Location:</strong></p>
+            </div>
+            <div class="col-md-7">
+              <p>{{user.canonicalName}}</p>
+            </div>
+            <div class="col-md-1">
+              <i ngIIclipboard [cbContent]="user.canonicalName" class="material-icons copy-button">content_copy</i>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.dn">
+            <div class="col-md-4">
+              <p><strong>Distinguished Name:</strong></p>
+            </div>
+            <div class="col-md-7">
+              <p>{{user.dn}}</p>
+            </div>
+            <div class="col-md-1">
+              <i ngIIclipboard [cbContent]="user.dn" class="material-icons copy-button">content_copy</i>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.memberOf">
+            <div class="col-md-4">
+              <p><strong>Groups:</strong></p>
+            </div>
+            <div class="col-md-8 clickable" (click)="showGroups = !showGroups">
+              <b *ngIf="!showGroups">+</b><b *ngIf="showGroups">-</b>Member of {{user.memberOf?.length}} Groups
+            </div>
+            <div *ngIf="showGroups" class="col-md-12">
+              <ul>
+                <li *ngFor="let group of user.memberOf | groupFilter" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{group}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.gmailenabled == 'No'">
+            <div class="col-md-4">
+              <p><strong>ONID Mail Quota:</strong></p>
+            </div>
+            <div class="col-md-7">
+              <p>{{user.contool.mailquota | quotaClean}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user.contool?.diskquota">
+            <div class="col-md-4">
+              <p><strong>ONID Disk Quota:</strong></p>
+            </div>
+            <div class="col-md-7">
+              <p>{{user.contool.diskquota | quotaClean}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user?.whenCreated">
+            <div class="col-md-4">
+              <p><strong>Account Created:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.whenCreated | dateFormat | date:'medium'}}, {{user.whenCreated | dateFormat | dateFromNow}}</p>
+            </div>
+          </div>
+          <div class="row account-alert" *ngIf="user.contool?.createdonid == 'No'">
+            <div class="col-md-4">
+              <p><strong>ONID Set-Up:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.contool.createdonid}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user?.pwdLastSet">
+            <div class="col-md-4">
+              <p><strong>Password Changed:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.pwdLastSet | unixDateFormat | date:'medium'}}, {{user.pwdLastSet | unixDateFormat | dateFromNow}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user?.msDS-UserPasswordExpiryTimeComputed || user.contool?.pwdexpiration">
+            <div class="col-md-4">
+              <p><strong>Password Expires:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p *ngIf="user?.msDS-UserPasswordExpiryTimeComputed">{{user["msDS-UserPasswordExpiryTimeComputed"] | unixDateFormat | date:'medium'}} {{user["msDS-UserPasswordExpiryTimeComputed"] | unixDateFormat | dateFromNow}}</p>
+              <p *ngIf="user.contool?.pwdexpiration"> {{user.contool.pwdexpiration}}, {{user.contool.pwdexpiration | dateFromNow}}</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user?.userAccountControl == '66048'">
+            <div class="col-md-4">
+              <p><strong>Password Expires:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>Password Never Expires</p>
+            </div>
+          </div>
+          <div class="row" *ngIf="user?.lastLogonTimestamp">
+            <div class="col-md-4">
+              <p><strong>Last Login:</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.lastLogonTimestamp | unixDateFormat | date:'medium'}}, {{user.lastLogonTimestamp | unixDateFormat | dateFromNow}}</p>
+            </div>
+          </div>
+          <div class="row accout-alert" *ngIf="user?.badPwdCount || user.contool?.lastpwdfailtime">
+            <div class="col-md-4">
+              <p><strong>Login Failure(s):</strong></p>
+            </div>
+            <div class="col-md-8">
+              <p *ngIf="user?.badPwdCount">{{user.badPasswordTime}} ({{user.badPwdCount}})</p>
+              <p *ngIf="user.contool?.lastpwdfailtime">{{user.contool.lastpwdfailtime}}, {{user.contool.lastpwdfailtime | dateFromNow}} (we still need coutn on ONID failures)</p>
+            </div>
+          </div>
+          <div class="row account-alert" *ngIf="user?.userAccountControl == '514'">
+            <div class="col-md-4">
+              <p><strong>Account Deactivated: </strong></p>
+            </div>
+            <div class="col-md-8">
+              <p>{{user.description}}</p>
+              <p *ngIf="user.contool?.deactivatedmsg">{{user.contool.deactivatedmsg}} ({{user.contool.deactivateddate}}, {{user.contool.deactivateddate | dateFromNow}})</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- EXTERNAL REPORTS -->
+      <div id="external-reports" *ngIf="user.reports" class="col-md-12 expanded-group">
+        <h4>External Reports</h4>
+        <div class="well col-md-12 details-panel">
+          <div class="row external-reports">
+            <a *ngFor="let report of user.reports" [href]="report.url">{{report.name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="something" class="col-md-12 expanded-group">
+      <pre>{{user | json}}</pre>
+    </div>
+  </div>
