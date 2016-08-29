@@ -1,3 +1,96 @@
+CSS
+
+#topnav ul{
+  background-color: #9d8484;
+  text-align: center;
+  display: flex; /* Flex makes all boxes the same size */
+  padding: 3px;
+  margin: 0;
+}
+
+#topnav li {
+  display: inline-block; /* Removes the bullets */
+  text-align: center;
+  flex: 100%; /* Flex makes all boxes the same size */
+  font-size: 20px;
+  text-shadow: 1px 1px black;
+}
+
+#topnav li:hover {
+  background-color: black;
+}
+
+#topnav li a {
+  text-decoration: none;
+  color: white;
+  display: block; /* Allows the entire box to be an anchor */
+  text-align: center;
+}
+
+.link, .link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+body{
+  margin: 5%;
+}
+
+h1{
+  text-align: center;
+}
+
+h2{
+  color: green;
+  text-align: center;
+}
+
+footer{
+  text-align: center;
+}
+
+span{
+  font-size: 22px;
+  background-color: yellow;
+}
+
+.main, .hours{
+  text-align: center;
+}
+
+.map{
+  color: inherit;
+}
+
+.nostyle{
+  font-size:14px;
+  display: inline;
+  text-align: center;
+  background-color: #rgb(148, 242, 50);
+}
+
+.coupon{
+	text-align: center;
+}
+
+#start{
+  text-align: left;
+  padding: 0 10% 0 10%;
+  font-size: 20px;
+}
+
+hr{
+  opacity: .5;
+}
+
+#botnav {
+  color: white;
+  background-color: black;
+}
+
+
+////////////////////////////////////////// index.html
+
 <!DOCTYPE html>
 <html ng-app="pizza">
 
@@ -39,37 +132,29 @@
 <!-- ************ TOP NAVIGATION ************ -->
 <body>
     <header>
-        <div>
+        <div id="topnav">
             <nav>
                 <div class="logo">
                     <center>
                         <a ui-sref="home"><img src="static/css/img/logo.jpg"></a>
                     </center>
                 </div>
-
-                <ul class="nav nav-tabs">
-                    <li class="" ui-sref="home"><a data-toggle="tab" aria-expanded="">Home</a>
+                <ul class="header">
+                    <li class="link" ui-sref="menu">Menu
                     </li>
-                    <li class="" ui-sref="menu" class=""><a data-toggle="tab" aria-expanded="">Menu</a>
+                    <li class="link" ui-sref="coupons">Coupons
                     </li>
-                    <li class="" ui-sref="coupons" class=""><a data-toggle="tab" aria-expanded="">Coupons</a>
+                    <li class="link" ui-sref="suds">Suds & Suds
                     </li>
-                    <li ui-sref="suds" class=""><a data-toggle="tab">Suds & Suds</a>
+                    <li class="link" ui-sref="tour">Tour
                     </li>
-                    <li ui-sref="tour" class=""><a data-toggle="tab">Tour</a>
+                    <li class="link" ui-sref="donation">Donation Requests
                     </li>
-                    <li ui-sref="donation" class=""><a data-toggle="tab">Donation Requests</a>
+                    <li class="link" ui-sref="job">Job Information
                     </li>
-                    <li ui-sref="job"><a data-toggle="tab">Job Info</a>
+                    <li class="link" ui-sref="about">About
                     </li>
-                    <li ui-sref="about"><a data-toggle="tab">About</a>
                 </ul>
-
-                <div id="myTabContent" class="tab-content">
-                  <div class="tab-pane fade active in" id="home">
-
-                  </div>
-                </div>
             </nav>
         </div>
     </header>
@@ -77,26 +162,25 @@
 <!-- ************ PAGE CONTENT ************ -->
     <div ui-view></div>
 
-<!-- ************ BOTTOM NAVIGATION ************
-    <div>
+<!-- ************ BOTTOM NAVIGATION ************ -->
+    <div id="botnav">
         <ul>
-            <li ui-sref="menu">Menu</a>
+            <li class="nostyle" ui-sref="menu">Menu</a>
             </li>
-            <li ui-sref="coupons">Coupons</a>
+            <li class="nostyle" ui-sref="coupons">Coupons</a>
             </li>
-            <li ui-sref="suds">Suds & Suds</a>
+            <li class="nostyle" ui-sref="suds">Suds & Suds</a>
             </li>
-            <li ui-sref="tour">Tour</a>
+            <li class="nostyle" ui-sref="tour">Tour</a>
             </li>
-            <li ui-sref="donation">Donation Requests</a>
+            <li class="nostyle" ui-sref="donation">Donation Requests</a>
             </li>
-            <li ui-sref="job">Job Information</a>
+            <li class="nostyle" ui-sref="job">Job Information</a>
             </li>
-            <li ui-sref="about">About</a>
+            <li class="nostyle" ui-sref="about">About</a>
             </li>
         </ul>
     </div>
--->
     <footer>
         <br>Created by <strong>Alex Schultz</strong>; &copy;2016 Woodstock's
     </footer>
