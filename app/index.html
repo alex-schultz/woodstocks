@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="static/css/cerulean.css">
     <script type="text/javascript" src="static/bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="static/bower_components/jquery/dist/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script type="text/javascript" src="static/bower_components/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-
     <script type="text/javascript" src="static/js/app.js"></script>
     <script type="text/javascript" src="static/js/controller.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <script type="text/javascript" src="static/js/controller.js"></script>
+    <script type="text/javascript" src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <!--  <header>
     <div class="header">
@@ -48,17 +49,17 @@
                 </div>
 
                 <ul class="nav nav-tabs">
-                    <li class="" ui-sref="home"><a data-toggle="tab" aria-expanded="">Home</a>
+                    <li ui-sref="home"><a data-toggle="tab" ng-click="activateTab('home')">Home</a>
                     </li>
-                    <li class="" ui-sref="menu" class=""><a data-toggle="tab" aria-expanded="">Menu</a>
+                    <li ui-sref="menu"><a data-toggle="tab">Menu</a>
                     </li>
-                    <li class="" ui-sref="coupons" class=""><a data-toggle="tab" aria-expanded="">Coupons</a>
+                    <li ui-sref="coupons"><a data-toggle="tab">Coupons</a>
                     </li>
-                    <li ui-sref="suds" class=""><a data-toggle="tab">Suds & Suds</a>
+                    <li ui-sref="suds"><a data-toggle="tab">Suds & Suds</a>
                     </li>
-                    <li ui-sref="tour" class=""><a data-toggle="tab">Tour</a>
+                    <li ui-sref="tour"><a data-toggle="tab">Tour</a>
                     </li>
-                    <li ui-sref="donation" class=""><a data-toggle="tab">Donation Requests</a>
+                    <li ui-sref="donation"><a data-toggle="tab">Donation Requests</a>
                     </li>
                     <li ui-sref="job"><a data-toggle="tab">Job Info</a>
                     </li>
