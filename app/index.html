@@ -9,15 +9,10 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="static/css/cerulean.css">
     <script type="text/javascript" src="static/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="static/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="static/js/app.js"></script>
     <script type="text/javascript" src="static/js/controller.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script type="text/javascript" src="static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script type="text/javascript" src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="static/js/app.js"></script>
-    <script type="text/javascript" src="static/js/controller.js"></script>
-    <script type="text/javascript" src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <!--  <header>
     <div class="header">
@@ -48,23 +43,26 @@
                     </center>
                 </div>
 
-                <ul class="nav nav-tabs">
-                    <li ui-sref="home"><a data-toggle="tab" ng-click="activateTab('home')">Home</a>
-                    </li>
-                    <li ui-sref="menu"><a data-toggle="tab">Menu</a>
-                    </li>
-                    <li ui-sref="coupons"><a data-toggle="tab">Coupons</a>
-                    </li>
-                    <li ui-sref="suds"><a data-toggle="tab">Suds & Suds</a>
-                    </li>
-                    <li ui-sref="tour"><a data-toggle="tab">Tour</a>
-                    </li>
-                    <li ui-sref="donation"><a data-toggle="tab">Donation Requests</a>
-                    </li>
-                    <li ui-sref="job"><a data-toggle="tab">Job Info</a>
-                    </li>
-                    <li ui-sref="about"><a data-toggle="tab">About</a>
-                </ul>
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li ui-sref-active="active"><a ui-sref="home" data-toggle="tab">Home</a>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="menu" data-toggle="tab">Menu</a>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="coupons" data-toggle="tab">Coupons</a>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="suds" data-toggle="tab">Suds & Suds</a>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="tour" data-toggle="tab">Tour</a>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="donation" data-toggle="tab">Donation Requests</a>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="job" data-toggle="tab">Job Info</a>
+                        </li>
+                        <li ui-sref-active="active"><a ui-sref="about" data-toggle="tab">About</a>
+                    </ul>
+                </div>
+
 
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="home">
