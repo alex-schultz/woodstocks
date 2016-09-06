@@ -68,7 +68,11 @@ span{
 }
 
 .coupon{
-	text-align: center;
+  border: 2px dotted black;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
 }
 
 #start{
@@ -77,11 +81,26 @@ span{
   font-size: 20px;
 }
 
-hr{
-  opacity: 1;
-}
-
 #botnav {
   color: white;
   background-color: black;
+}
+
+em {
+  font-size: 10px;
+}
+
+.menu {
+  text-align: center;
+  border: 1px solid black;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.nobullet {
+  list-style-type: none;
+}
+
+#toppings, #protein {
+  column-count: 2;
 }
