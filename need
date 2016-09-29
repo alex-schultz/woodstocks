@@ -1,0 +1,5 @@
+* = optional
+
+node
+bower
+*gulp
