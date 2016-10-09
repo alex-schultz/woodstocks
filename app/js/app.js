@@ -62,13 +62,6 @@
           controller: function($scope){
 
           }
-        })
-        .state('about', {
-          url: "/about",
-          templateUrl: "static/views/about/about.html",
-          controller: function($scope){
-
-          }
         });
     });
 })();
