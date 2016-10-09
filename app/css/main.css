@@ -103,3 +103,7 @@ em {
 #toppings, #protein, .tour {
   column-count: 2;
 }
+
+#beverages {
+  column-count:;
+}
