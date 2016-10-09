@@ -90,6 +90,10 @@ em {
   font-size: 10px;
 }
 
+#open {
+  text-align: center;
+}
+
 .menu {
   text-align: center;
   width: 50%;
