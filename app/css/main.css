@@ -34,16 +34,7 @@ body{
   margin: 5%;
 }
 
-h1{
-  text-align: center;
-}
-
-h2{
-  color: green;
-  text-align: center;
-}
-
-footer{
+h1, footer, .main, .hours, #open{
   text-align: center;
 }
 
@@ -52,19 +43,8 @@ span{
   background-color: yellow;
 }
 
-.main, .hours{
-  text-align: center;
-}
-
 .map{
   color: inherit;
-}
-
-.nostyle{
-  font-size:14px;
-  display: inline;
-  text-align: center;
-  background-color: #rgb(148, 242, 50);
 }
 
 .coupon{
@@ -76,7 +56,7 @@ span{
 }
 
 .start{
-  text-align: left;
+  text-align: center;
   padding: 0 10% 0 10%;
   font-size: 20px;
 }
@@ -90,14 +70,11 @@ em {
   font-size: 10px;
 }
 
-#open {
-  text-align: center;
-}
-
 .menu {
   text-align: center;
   width: 50%;
   margin: 0 auto;
+  font-size: 18px;
 }
 
 .nobullet {
@@ -106,8 +83,4 @@ em {
 
 #toppings, #protein, .tour {
   column-count: 2;
-}
-
-#beverages {
-  column-count:;
 }
