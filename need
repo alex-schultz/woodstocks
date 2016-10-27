@@ -3,3 +3,5 @@
 node
 bower
 *gulp
+
+Don't forget to create new branch for each issue > pull request > merge
