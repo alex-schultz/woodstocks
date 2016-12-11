@@ -46,6 +46,7 @@
                     </center>
                 </div>
                 <br>
+
                 <div>
                     <ul class="nav nav-tabs">
                         <li ui-sref-active="active"><a ui-sref="home" data-toggle="tab">Home</a>
@@ -65,7 +66,6 @@
                     </ul>
                 </div>
 
-
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="home">
                     </div>
@@ -73,12 +73,14 @@
             </nav>
         </div>
     </header>
-
     <!-- ************ PAGE CONTENT ************ -->
-    <div ui-view></div>
-
+    <div id="contain-view">
+      <div ui-view>
+      </div>
+    </div>
     <!-- ************ LOWER NAVIGATION; FOOTER********* -->
   <hr />
+
     <footer>
         <h2>Hours of Operation</h2>
         <div class="hours">
@@ -101,5 +103,5 @@
         <hr>
         Created by <strong>Alex Schultz</strong>; &copy;2016 Woodstock's
     </footer>
-
+</div>
 </body>

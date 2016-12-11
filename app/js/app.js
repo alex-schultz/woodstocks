@@ -42,13 +42,6 @@
 
           }
         })
-        .state('tour2', {
-          url: "/tour2",
-          templateUrl: "static/views/tour2.html",
-          controller: function($scope){
-
-          }
-        })
         .state('donation', {
           url: "/donation",
           templateUrl: "static/views/donation.html",
