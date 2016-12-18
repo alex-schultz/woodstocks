@@ -90,7 +90,8 @@ em {
 }
 
 #contain-view{
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-radius: 45px;
-  margin: 2% 2% 0 2%;
+  margin: 0% 2% 0 2%;
+  padding: 0% 20% 0% 20%;
 }
