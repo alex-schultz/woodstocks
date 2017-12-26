@@ -37,6 +37,7 @@
 <!-- ************ TOP NAVIGATION ************ -->
 
 <body>
+  <div id="image">
     <header>
         <div>
             <nav>
@@ -47,22 +48,29 @@
                 </div>
                 <br>
 
-                <div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav nav-tabs">
                         <li ui-sref-active="active"><a ui-sref="home" data-toggle="tab">Home</a>
                         </li>
                         <li ui-sref-active="active"><a ui-sref="menu" data-toggle="tab">Menu</a>
                         </li>
-                        <li ui-sref-active="active"><a ui-sref="coupons" data-toggle="tab">Coupons</a>
-                        </li>
-                        <li ui-sref-active="active"><a ui-sref="suds" data-toggle="tab">Suds & Suds</a>
-                        </li>
-                        <li ui-sref-active="active"><a ui-sref="tour" data-toggle="tab">Tour</a>
-                        </li>
-                        <li ui-sref-active="active"><a ui-sref="donation" data-toggle="tab">Donation Requests</a>
-                        </li>
-                        <li ui-sref-active="active"><a ui-sref="job" data-toggle="tab">Job Info</a>
-                        </li>
+
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More<span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu" ui-sref-active="active">
+
+                                <li ui-sref-active="active"><a ui-sref="coupons" data-toggle="tab">Coupons</a>
+                                </li>
+                                <li ui-sref-active="active"><a ui-sref="suds" data-toggle="tab">Suds & Suds</a>
+                                </li>
+                                <li ui-sref-active="active"><a ui-sref="tour" data-toggle="tab">Tour</a>
+                                </li>
+                                <li ui-sref-active="active"><a ui-sref="donation" data-toggle="tab">Donation Requests</a>
+                                </li>
+                                <li ui-sref-active="active"><a ui-sref="job" data-toggle="tab">Job Info</a>
+                                </li>
+                            </li>
+                          </ul>
                     </ul>
                 </div>
 
@@ -72,6 +80,7 @@
                 </div>
             </nav>
         </div>
+      </div>
     </header>
     <!-- ************ PAGE CONTENT ************ -->
     <div id="contain-view">
@@ -97,11 +106,12 @@
           Corvallis, Oregon</a><br>
           <em>^Click to open in maps^</em>
           <br>
-          <span>541-752-5151</span>
+          <span id="num">541-752-5151</span>
         </strong>
         </div>
         <hr>
         Created by <strong>Alex Schultz</strong>; &copy;2016 Woodstock's
     </footer>
 </div>
+
 </body>

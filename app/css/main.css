@@ -30,28 +30,55 @@
   cursor: pointer;
 }
 */
-body{
+body {
   margin: 5%;
 }
 
-h1, footer, .main, .hours, #open{
+#image {
+  display: block;
+  position: relative;
+}
+
+#image::after {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* IE8 */
+  content: "";
+  background: url(img/wheat.jpeg);
+  background-size: 100%;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+h1, .main, .hours, #open {
   text-align: center;
 }
 
-span{
+footer {
+  text-align: center;
+  background-color: black;
+}
+
+#num {
   font-size: 22px;
   background-color: yellow;
 }
 
-.map{
+.map {
   color: inherit;
 }
 
-.blacklink{
+.blacklink {
   color: black;
 }
 
-.coupon{
+.coupon {
   border: 2px dotted black;
   width: 50%;
   margin: 0 auto;
@@ -59,7 +86,7 @@ span{
   text-align: center;
 }
 
-.start{
+.start {
   text-align: center;
   padding: 0 10% 0 10%;
   font-size: 20px;
@@ -92,6 +119,6 @@ em {
 #contain-view{
   border: 1px solid transparent;
   border-radius: 45px;
-  margin: 0% 2% 0 2%;
+  margin: 0px 0px 0px 0px;
   padding: 0% 20% 0% 20%;
 }

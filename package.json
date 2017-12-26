@@ -2,7 +2,7 @@
   "name": "woodstocks",
   "homepage": "https://github.com/alex-schultz/woodstocks",
   "authors": [
-    "alex-schultz <schultzy911@yahoo.com>"
+    "alex-schultz <schultzyy911@gmail.com>"
   ],
   "description": "",
   "main": "",
@@ -10,8 +10,9 @@
   "private": true,
   "dependencies": {
     "angular": "^1.5.8",
-    "jquery": "^3.1.0",
+    "@ui-router/angularjs": "latest",
     "bootstrap": "^3.3.7",
-    "angular-ui-router": "^0.3.1"
+    "express": "^4.16.2",
+    "jquery": "^3.1.0"
   }
 }

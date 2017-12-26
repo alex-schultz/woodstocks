@@ -4023,7 +4023,25 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid #dddddd;
   justify-content: center;
   display: flex;
+  /*background-image: linear-gradient(#light, #a little darker, %, dark);*/
   background-image: linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
+  /* IE9, iOS 3.2+
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjZmY5YThmIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNmYjAwMTQiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjYxNSIvPjxzdG9wIHN0b3AtY29sb3I9IiNiOTJlMDAiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2ZmN2E2NyIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(255, 154, 143)),color-stop(0.615, rgb(251, 0, 20)),color-stop(1, rgb(185, 46, 0)),color-stop(1, rgb(255, 122, 103)));
+   Android 2.3
+  background-image: -webkit-linear-gradient(top,rgb(255, 154, 143) 0%,rgb(251, 0, 20) 61.5%,rgb(185, 46, 0) 100%,rgb(255, 122, 103) 100%);
+  IE10+
+  background-image: linear-gradient(to bottom,rgb(255, 154, 143) 0%,rgb(251, 0, 20) 61.5%,rgb(185, 46, 0) 100%,rgb(255, 122, 103) 100%);
+  background-image: -ms-linear-gradient(top,rgb(255, 154, 143) 0%,rgb(251, 0, 20) 61.5%,rgb(185, 46, 0) 100%,rgb(255, 122, 103) 100%);*/
+}
+
+/* IE8- CSS hack */
+@media \0screen\,screen\9 {
+    .gradient {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffff9a8f",endColorstr="#ffff7a67",GradientType=0);
+    }
+}
+
 }
 .nav-tabs > li {
   float: left;
@@ -4043,7 +4061,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #3a87ad;
+  color: black;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
