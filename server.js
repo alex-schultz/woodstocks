@@ -9,6 +9,6 @@ app.get('*', function (req, res) {
   res.sendFile(__dirname + '/app/index.html');
 });
 
-app.listen(3000, function() {
-  console.log('Server is up and running on port 3000');
+app.listen(4000, function() {
+  console.log('Server is up and running on port 4000');
 });

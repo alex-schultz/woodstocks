@@ -56,8 +56,13 @@ body {
   background-repeat: no-repeat;
 }
 
-h1, footer, .main, .hours, #open {
+h1, .main, .hours, #open {
   text-align: center;
+}
+
+footer {
+  text-align: center;
+  background-color: black;
 }
 
 #num {
